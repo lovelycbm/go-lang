@@ -1,13 +1,16 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
+
+type person struct {
+	name    string
+	age     int
+	favFood []string
+}
 
 func main() {
-	a := 2
-	b := &a
-	*b = 20
+	favFood := []string{"steak", "ramen"}
+	choi := person{name: "choi", age: 35, favFood: favFood}
+	fmt.Println(choi)
 
-	fmt.Println(a)
 }
