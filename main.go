@@ -1,16 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-type person struct {
-	name    string
-	age     int
-	favFood []string
-}
+	"example.com/hello/accounts"
+)
 
 func main() {
-	favFood := []string{"steak", "ramen"}
-	choi := person{name: "choi", age: 35, favFood: favFood}
-	fmt.Println(choi)
+	account := accounts.NewAccount("bong")
 
+	account.Deposit(100)
+
+	err := account.Withdraw(20)
+	if err != nil {
+		fmt.Println(err)
+	}
+	//fmt.Println(account.Balance(), account.Owner())
+	fmt.Println(account)
 }
