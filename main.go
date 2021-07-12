@@ -3,18 +3,18 @@ package main
 import (
 	"fmt"
 
-	"example.com/hello/accounts"
+	"example.com/hello/mydict"
 )
 
 func main() {
-	account := accounts.NewAccount("bong")
 
-	account.Deposit(100)
-
-	err := account.Withdraw(20)
+	dictionary := mydict.Dictionary{"first": "First word"}
+	definition, err := dictionary.Search("first")
+	// 간단한데 강력함.
 	if err != nil {
 		fmt.Println(err)
+	} else {
+		fmt.Println(definition)
 	}
-	//fmt.Println(account.Balance(), account.Owner())
-	fmt.Println(account)
+
 }
